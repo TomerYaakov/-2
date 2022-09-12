@@ -2,13 +2,13 @@ using System;
 
 class Program {
   public static void Main (string[] args) {
-    int x = -5;
+    int x = -4;
     int temp = x;
     int y = 0;
     while (x <= 0) {
-      y = x*x;
+      y = x*x - 2;
       int space = x;
-      int forspace = -5;
+      int forspace = temp;
       int hight = 0;
       forSpace(forspace, x, y);
       Console.Write(-y);
@@ -16,7 +16,7 @@ class Program {
       if(x != 0) {
       Console.WriteLine(y);
       }
-      Hight(hight, x, y, forspace, space);
+      // Hight(hight, x, y, forspace, space);
       x++;
     }
     
@@ -29,11 +29,23 @@ class Program {
   }
   private static void forSpace(int forspace, int x, int y) {
     if(y < 10) {
-      while(forspace < x + 1) {
+      while(forspace < x + 3) {
        Console.Write(" ");
         if(x == 0 && forspace == -1) {
           Console.Write(" ");
         }
+       forspace++;
+      }
+    }
+    else if(y >= 10 && y < 100) {
+      while(forspace < x + 2) {
+       Console.Write(" ");
+       forspace++;
+      }
+    }
+    else if(y >= 100 && y < 1000) {
+      while(forspace < x + 1) {
+       Console.Write(" ");
        forspace++;
       }
     }
