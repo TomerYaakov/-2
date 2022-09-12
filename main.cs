@@ -3,6 +3,7 @@ using System;
 class Program {
   public static void Main (string[] args) {
     int x = -5;
+    int temp = x;
     int y = 0;
     while (x <= 0) {
       y = x*x;
@@ -12,10 +13,10 @@ class Program {
       forSpace(forspace, x, y);
       Console.Write(-y);
       Space(space, x);
-      if(x !=0) {
+      if(x != 0) {
       Console.WriteLine(y);
       }
-      // Hight(hight, y);
+      Hight(hight, x, y, forspace, space);
       x++;
     }
     
@@ -43,9 +44,20 @@ class Program {
       }
     }
   }
-  private static void Hight(int hight, int y) {
-    while(hight < y) {
-     Console.WriteLine(" ");
+  private static void Hight(int hight, int x, int y, int forspace, int space) {
+    while(hight < y - 2) {
+      if(y > 10) {
+       forSpace(forspace, x, y);
+       Console.Write("  .");
+       Space(space, x);
+       Console.WriteLine(".");
+      }
+      else {
+       forSpace(forspace, x, y);
+       Console.Write(" .");
+       Space(space, x);
+       Console.WriteLine(".");
+      }
      hight++;
     }
   }
